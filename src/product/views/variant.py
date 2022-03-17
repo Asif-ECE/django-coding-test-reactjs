@@ -1,5 +1,5 @@
 from django.views import generic
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView
 
 from product.forms import VariantForm
 from product.models import Variant
