@@ -26,12 +26,12 @@ class CreateProductView(generic.TemplateView):
 
 class ProductListView(generic.ListView):
 
-    # paginate_by = 2
-    # model = Product
+    paginate_by = 2
+    model = Product
 
     def get_queryset(self):
-        context_object_name = "data"
-        template_name = "products/list.html"
+        #context_object_name = "data"
+        #template_name = "products/list.html"
         filter_string = {}
         self.request.GET = self.request.GET.copy()
         for key in self.request.GET:
@@ -54,7 +54,7 @@ class ProductListView(generic.ListView):
 
         data = {"products": products, "variants_prices_stocks": variants_prices_stocks}
 
-        return data
+        return products
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
